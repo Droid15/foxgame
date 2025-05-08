@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://dixicchjnlpr4"]
+
+[ext_resource type="Texture2D" uid="uid://dalyb6gw5mr08" path="res://AssetBundle/Sprites/gdb-xbox-2.png" id="1_k5j3s"]
+[ext_resource type="Texture2D" uid="uid://c4lvf6u4yct7" path="res://AssetBundle/Sprites/gdb-playstation-2.png" id="2_qifd3"]
+[ext_resource type="Script" uid="uid://5vsbyirsxmfg" path="res://Script/direction_ctr.gd" id="3_a6wj0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qifd3"]
+atlas = ExtResource("1_k5j3s")
+region = Rect2(338, 578, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6wj0"]
+atlas = ExtResource("2_qifd3")
+region = Rect2(129, 353, 14, 14)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a6wj0"]
+
+[node name="VirtualJoypad" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1089.0
+offset_bottom = -578.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="OnFire" type="TouchScreenButton" parent="Control"]
+modulate = Color(1, 1, 1, 0.517647)
+position = Vector2(-37, -209)
+scale = Vector2(9.58333, 9.5)
+texture_normal = SubResource("AtlasTexture_qifd3")
+action = "开火"
+visibility_mode = 1
+
+[node name="Stick" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -70.0
+offset_bottom = -70.0
+grow_vertical = 0
+
+[node name="DirectionCtr" type="TouchScreenButton" parent="Stick"]
+modulate = Color(1, 1, 1, 0.529412)
+position = Vector2(-677, -134)
+scale = Vector2(6.415, 6.415)
+texture_normal = SubResource("AtlasTexture_a6wj0")
+shape = SubResource("CircleShape2D_a6wj0")
+visibility_mode = 1
+script = ExtResource("3_a6wj0")

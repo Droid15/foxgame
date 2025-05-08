@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://db0lwp5rynsyk"]
+
+[ext_resource type="AudioStream" uid="uid://bk2hb118qyj5d" path="res://AssetBundle/Audio/BGM.ogg" id="1_fty6e"]
+
+[node name="BGM" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_fty6e")
+autoplay = true

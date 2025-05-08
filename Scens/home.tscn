@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxjrngumicgpa"]
+
+[ext_resource type="Script" uid="uid://b4ukompw6b1n0" path="res://Scens/home.gd" id="1_ihfpf"]
+
+[node name="home" type="Node2D"]
+script = ExtResource("1_ihfpf")
+
+[node name="game_start" type="Button" parent="."]
+offset_left = 397.0
+offset_top = 297.0
+offset_right = 477.0
+offset_bottom = 325.0
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 10
+text = "开始"
+
+[node name="game_help" type="Button" parent="."]
+offset_left = 398.0
+offset_top = 340.0
+offset_right = 476.0
+offset_bottom = 363.0
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 10
+text = "帮助"
+
+[connection signal="button_down" from="game_start" to="." method="_on_start_button_down"]
